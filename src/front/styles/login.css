@@ -1,0 +1,206 @@
+.login-page {
+    width: 100%;
+    min-height: 100dvh;
+    background-color: var(--blue-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.5rem 4rem;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+/*    HEADER     */
+.login-header {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-logo {
+    width: 400px;
+    max-width: 40vw;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+.login-brand {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.35em;
+    font-weight: 800;
+    font-style: italic;
+    color: var(--beige);
+}
+
+.login-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    color: white;
+}
+
+.login-subtitle {
+    font-size: 1rem;
+    color: var(--beige);
+    margin-top: 0.6rem;
+    opacity: 0.85;
+}
+
+/*    FORMULARIO    */
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.login-form label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: white;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 1.4rem;
+}
+
+.input-wrapper input {
+    width: 100%;
+    height: 56px;
+    padding: 1rem 1.1rem;
+    border-radius: 14px;
+    border: 2px solid var(--orange);
+    background-color: rgba(255, 255, 255, 0.06);
+    color: white;
+    font-size: 0.95rem;
+}
+
+.input-wrapper input::placeholder {
+     color: rgba(235, 226, 149, 0.6);
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: var(--yellow-1);
+    box-shadow: 0 0 0 3px rgba(242, 204, 12, 0.25);
+}
+
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--yellow-2);
+}
+
+/*    OLVIDASTE CONTRASEÑA    */
+.forgot-password {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--yellow-1);
+    margin-bottom: 1.6rem;
+    cursor: pointer;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/*    BOTÓN    */
+.login-button {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    height: 56px;
+    align-items: center;
+    background: linear-gradient(
+        180deg,
+        var(--yellow-1) 0%,
+        var(--yellow-2) 100%
+    );
+    border: none;
+    border-radius: 16px;
+    padding: 1rem;
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--blue-dark);
+    cursor: pointer;
+    margin-top: 1.2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    transition: transform 0.15s ease, filter 0.2s ease;
+}
+
+.login-button:hover {
+     filter: brightness(1.05);
+}
+
+.login-button:active {
+     transform: scale(0.97);
+}
+
+/*    SOCIAL LOGIN    */
+.social-login {
+    margin-top: 3.2rem;
+    text-align: center;
+}
+
+.divider {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(235, 226, 149, 0.6);
+    margin-bottom: 1.2rem;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-buttons button {
+    flex: 1;
+    padding: 0.85rem;
+    border-radius: 14px;
+    border: 1px solid rgba(235, 226, 149, 0.3);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.social-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/*    FOOTER    */
+.login-footer {
+    margin-top: auto;
+    padding-top: 3rem;
+    font-size: 0.9rem;
+    color: var(--beige);
+}
+
+.login-link {
+    font-weight: 800;
+    margin-left: 0.4rem;
+    color: var(--yellow-1);
+    cursor: pointer;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
