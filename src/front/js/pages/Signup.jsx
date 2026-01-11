@@ -1,8 +1,10 @@
 import "../../styles/login.css";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SocialSignup from "../component/SocialSignup";
 import SignupHeader from "../component/SignupHeader";
+import SignupForm from "../component/SignupForm";
+import SignupFooter from "../component/SignupFooter";
 
 export const Signup = () => {
   const navigate = useNavigate();
@@ -34,45 +36,10 @@ export const Signup = () => {
   return (
     <main className="signup-page">
       <SignupHeader />
-      <h1 className="signup-title">REGÍSTRATE Y RUEDA</h1>
-
       {error && <div className="auth-error">{error}</div>}
-
-      <form className="signup-form" onSubmit={submit}>
-        <label>Correo electrónico</label>
-        <div className="input-wrapper">
-          <input
-            type="email"
-            placeholder="ciclista@trail.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-
-        <label>Contraseña</label>
-        <div className="input-wrapper">
-          <input
-            type="password"
-            placeholder="••••••••"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-
-        <button className="signup-button">Lánzate al trail</button>
-      </form>
+      <SignupForm />
       <SocialSignup />
-      <div className="signup-footer">
-        <p>
-          ¿Ya tienes cuenta?
-          <Link className="signup-link" to="/login">
-            {" "}
-            Inicia sesión
-          </Link>
-        </p>
-      </div>
+      <SignupFooter />
     </main>
   );
 };

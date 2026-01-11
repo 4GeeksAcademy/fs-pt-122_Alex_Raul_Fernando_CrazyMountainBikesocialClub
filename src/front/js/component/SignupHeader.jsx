@@ -9,7 +9,13 @@ const SignupHeader = () => {
            alt="Trail logo"
            className="login-logo"
         />
+        <h1 className="signup-title">REGÍSTRATE Y RUEDA</h1>
+        <p className="signup-subtitle">
+           Crea una cuenta para sincronizar tus rutas de gravel y MTB.
+        </p>
       </div>
+      
+      
     );
 };
 
