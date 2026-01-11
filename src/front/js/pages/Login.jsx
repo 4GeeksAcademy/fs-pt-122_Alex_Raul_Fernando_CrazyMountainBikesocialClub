@@ -2,6 +2,7 @@ import "../../styles/login.css";
 import LoginHeader from "../component/LoginHeader";
 import LoginForm from "../component/LoginForm";
 import SocialLogin from "../component/SocialLogin";
+import LoginFooter from "../component/LoginFooter";
 
 export const Login = () => {
     return (
@@ -9,13 +10,7 @@ export const Login = () => {
             <LoginHeader />
             <LoginForm />
             <SocialLogin />
-            
-            <div className="login-footer">
-                <p>
-                  ¿Nuevo en la ruta?
-                  <span className="login-link"> Crear una cuenta</span>
-                </p>
-            </div>
+            <LoginFooter />
         </main>
     );
 };
