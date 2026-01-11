@@ -1,0 +1,92 @@
+.garage {
+    margin-top: 32px;
+}
+
+.garage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.garage-header h2 {
+     color: var(--beige);
+}
+
+.add-bike {
+    background: none;
+    border: none;
+    color: var(--yellow-1);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.garage-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.bike-card {
+    min-width: 280px;
+    background: linear-gradient(180deg, #14283a, #0f1f2e);
+    border-radius: 28px;
+    padding: 20px;
+    position: relative;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+.bike-card.active {
+    box-shadow: 0 0 0 2px var(--orange);
+}
+
+.bike-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.bike-card h3 {
+    color: var(--beige);
+    font-size: 16px;
+}
+
+.specs {
+    font-size: 12px;
+    color: var(--yellow-2);
+    margin-bottom: 12px;
+}
+
+.bike-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bike-footer span {
+    font-size: 12px;
+    color: var(--beige);
+}
+
+.bike-footer button {
+    background: var(--orange);
+    border: none;
+    padding: 6px 14px;
+    border-radius: 14px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--orange);
+    color: #000;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
