@@ -1,15 +1,24 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const LoginForm = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
-
-
+    const [error, setError] = useState(null);
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("login enviado:", { email, password });
+        setError(null);
+        
+    const resp = await fetch("http://127.0.0.1:3001/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    });
     }
+    
     return (
         <form className="login-form" onSubmit={handleSubmit}>
             <label>Correo electrónico</label>
