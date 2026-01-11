@@ -1,6 +1,7 @@
 import "../../styles/login.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import SocialSignup from "../component/SocialSignup";
 
 export const Signup = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export const Signup = () => {
     const resp = await fetch("http://127.0.0.1:3001/api/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password }),
     });
 
     const data = await resp.json().catch(() => ({}));
@@ -30,12 +31,12 @@ export const Signup = () => {
   };
 
   return (
-    <main className="login-page">
-      <h1 className="login-title">CREAR CUENTA</h1>
+    <main className="signup-page">
+      <h1 className="signup-title">REGÍSTRATE Y RUEDA</h1>
 
       {error && <div className="auth-error">{error}</div>}
 
-      <form className="login-form" onSubmit={submit}>
+      <form className="signup-form" onSubmit={submit}>
         <label>Correo electrónico</label>
         <div className="input-wrapper">
           <input
@@ -58,13 +59,16 @@ export const Signup = () => {
           />
         </div>
 
-        <button className="login-button">CREAR CUENTA</button>
+        <button className="signup-button">Lánzate al trail</button>
       </form>
-
-      <div className="login-footer">
+      <SocialSignup />
+      <div className="signup-footer">
         <p>
           ¿Ya tienes cuenta?
-          <Link className="login-link" to="/login"> Inicia sesión</Link>
+          <Link className="signup-link" to="/login">
+            {" "}
+            Inicia sesión
+          </Link>
         </p>
       </div>
     </main>

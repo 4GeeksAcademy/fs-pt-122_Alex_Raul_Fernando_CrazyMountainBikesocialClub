@@ -1,4 +1,4 @@
-const SocialLogin = () => {
+const SocialSignup = () => {
     return (
         <div className="social-login">
             <span className="divider">O CONTINUAR CON:</span>
@@ -21,4 +21,4 @@ const SocialLogin = () => {
     );
 };
 
-export default SocialLogin;
+export default SocialSignup;
