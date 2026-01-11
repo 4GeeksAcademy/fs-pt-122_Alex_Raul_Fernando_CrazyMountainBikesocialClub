@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./layout.jsx";
 import { Login } from "./pages/Login.jsx";
 import { Signup } from "./pages/Signup.jsx";
+import Home from "./pages/Home.jsx";
 import Profile from "./pages/Profile.jsx";
 
 export const router = createBrowserRouter([
@@ -12,10 +13,19 @@ export const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <h1>Not found</h1>,
     children: [
+      // 🟢 PÚBLICAS (sin login)
       { path: "/", element: <Login /> },
       { path: "/login", element: <Login /> },
       { path: "/signup", element: <Signup /> },
-      { path: "/private", element: <Profile /> }
+      // 🔴 PRIVADAS (con login)
+      { 
+        path: "/home", 
+        element: <Home /> 
+      },
+      { 
+        path: "/profile", 
+        element: <Profile /> 
+      },
     ]
   }
 ]);
