@@ -22,7 +22,7 @@
     width: 400px;
     max-width: 40vw;
     height: auto;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0rem;
 }
 
 .login-brand {
@@ -39,14 +39,14 @@
     font-weight: 800;
     font-style: italic;
     text-transform: uppercase;
-    margin-bottom: 0.8rem;
+    margin-bottom: 2rem;
     color: white;
 }
 
 .login-subtitle {
     font-size: 1rem;
     color: var(--beige);
-    margin-top: 0.6rem;
+    margin-bottom: 0rem;
     opacity: 0.85;
 }
 
