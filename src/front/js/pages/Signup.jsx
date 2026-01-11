@@ -2,6 +2,7 @@ import "../../styles/login.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SocialSignup from "../component/SocialSignup";
+import SignupHeader from "../component/SignupHeader";
 
 export const Signup = () => {
   const navigate = useNavigate();
@@ -32,6 +33,7 @@ export const Signup = () => {
 
   return (
     <main className="signup-page">
+      <SignupHeader />
       <h1 className="signup-title">REGÍSTRATE Y RUEDA</h1>
 
       {error && <div className="auth-error">{error}</div>}
