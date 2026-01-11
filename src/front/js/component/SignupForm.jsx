@@ -1,6 +1,6 @@
-const SignupForm = ({ submit, email, setEmail, password, setPassword }) => {
+const SignupForm = ({ onSubmit, email, setEmail, password, setPassword }) => {
   return (
-<form className="signup-form" onSubmit={submit}>
+<form className="signup-form" onSubmit={onSubmit}>
         <label>Correo electrónico</label>
         <div className="input-wrapper">
           <input
@@ -23,7 +23,7 @@ const SignupForm = ({ submit, email, setEmail, password, setPassword }) => {
           />
         </div>
 
-        <button className="signup-button">Lánzate al trail</button>
+        <button type="submit" className="signup-button">Lánzate al trail</button>
       </form>
     );
 };

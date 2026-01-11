@@ -51,7 +51,7 @@ const LoginForm = () => {
 
             <span className="forgot-password">¿OLVIDASTE TU CONTRASEÑA?</span>
 
-            <button className="login-button">
+            <button type="submit" className="login-button">
                 INICIAR SESIÓN
             </button>
         </form>
