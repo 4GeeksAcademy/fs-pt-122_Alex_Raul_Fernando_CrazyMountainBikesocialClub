@@ -46,7 +46,7 @@
 .login-subtitle {
     font-size: 1rem;
     color: var(--beige);
-    margin-bottom: 0rem;
+    margin-bottom: 0.8rem;
     opacity: 0.85;
 }
 
@@ -75,9 +75,9 @@
 }
 
 .input-wrapper input {
-    width: 100%;
+    width: 91%;
     height: 56px;
-    padding: 1rem 1.1rem;
+    padding: 1rem 1rem;
     border-radius: 14px;
     border: 2px solid var(--orange);
     background-color: rgba(255, 255, 255, 0.06);
@@ -111,7 +111,8 @@
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--yellow-1);
-    margin-bottom: 1.6rem;
+    margin-bottom: 0.4rem;
+    margin-top: 0.4rem;
     cursor: pointer;
 }
 
@@ -197,14 +198,14 @@
 .login-link {
     font-weight: 800;
     margin-left: 0.4rem;
-    color: var(--yellow-1);
+    color: inherit !important;
     cursor: pointer;
+    text-decoration: none !important ;
 }
 
 .login-link:hover {
     text-decoration: underline;
 }
-
 
 .auth-error {
   width: 100%;
