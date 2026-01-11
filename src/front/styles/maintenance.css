@@ -1,0 +1,38 @@
+.maintenance {
+  background: linear-gradient(
+    180deg,
+    #14283a,
+    #0f1f2e
+  );
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.bar {
+  margin-bottom: 16px;
+}
+
+.progress {
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+}
+
+.bar {
+  margin-bottom: 22px;
+}
+
+.ok {
+  background: var(--yellow-1);
+  height: 100%;
+}
+
+.warn {
+  background: var(--orange);
+  height: 100%;
+}
+
+.bad {
+  background: var(--brown);
+  height: 100%;
+}
