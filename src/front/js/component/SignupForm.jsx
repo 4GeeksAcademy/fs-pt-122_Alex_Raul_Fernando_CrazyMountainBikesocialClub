@@ -3,9 +3,13 @@ import { useState } from 'react';
 const SignupForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
+    setLoading(true);
 
     try {
       const resp = await fetch("/api/signup", {
@@ -17,13 +21,14 @@ const SignupForm = () => {
       const data = await resp.json();
 
       if (!resp.ok) {
-        alert(data.msg || "Error en registro");
+        setError(data.msg || "Error en registro");
         return;
       }
-
-      alert("¡Registrado correctamente!");
+      window.location.href = "/login";
     } catch (err) {
-      alert("Error de conexión");
+      setError("Error de conexión");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -38,6 +43,7 @@ const SignupForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           required
           autoComplete="email"
+          disabled={loading}
         />
       </div>
 
@@ -50,11 +56,14 @@ const SignupForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
           autoComplete="new-password"
+          disabled={loading}
         />
       </div>
 
-      <button type="submit" className="signup-button">
-        Lánzate al trail
+      {error && <div className="error-message">{error}</div>}
+
+      <button type="submit" className="signup-button" disabled={loading}>
+        {loading ? "Registrando..." : "Lánzate al trail"}
       </button>
     </form>
   );
