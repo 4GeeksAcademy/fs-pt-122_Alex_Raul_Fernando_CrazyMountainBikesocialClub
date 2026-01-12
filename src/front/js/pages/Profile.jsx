@@ -1,7 +1,7 @@
-import ProfileHeader from "../component/ProfileHeader";
-import Stats from "../component/Stats";
-import Maintenance from "../component/Maintenance";
-import Garage from "../component/Garage";
+import ProfileHeader from "../component/Profile/ProfileHeader";
+import Stats from "../component/Profile/Stats";
+import Maintenance from "../component/Profile/Maintenance";
+import Garage from "../component/Profile/Garage";
 
 
 const Profile = () => {

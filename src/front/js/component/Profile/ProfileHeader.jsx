@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SettingsDropdown from "./SettingsDropdown";
-import "../../styles/header.css";
+import "../../../styles/header.css";
 
 const ProfileHeader = () => {
   const [open, setOpen] = useState(false);
