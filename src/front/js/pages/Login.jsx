@@ -1,8 +1,8 @@
 import "../../styles/login.css";
-import LoginHeader from "../component/LoginHeader";
-import LoginForm from "../component/LoginForm";
-import SocialLogin from "../component/SocialLogin";
-import LoginFooter from "../component/LoginFooter";
+import LoginHeader from "../component/LogIn/LoginHeader";
+import LoginForm from "../component/LogIn/LoginForm";
+import SocialLogin from "../component/LogIn/SocialLogin";
+import LoginFooter from "../component/LogIn/LoginFooter";
 
 export const Login = () => {
     return (

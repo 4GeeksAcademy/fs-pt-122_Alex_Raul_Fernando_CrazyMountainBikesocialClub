@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../assets/trail.png";
+import logo from "../../../../assets/trail.png";
 
 const SignupHeader = () => {
     return (

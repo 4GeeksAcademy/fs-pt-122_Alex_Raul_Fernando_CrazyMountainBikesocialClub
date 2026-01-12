@@ -1,5 +1,5 @@
 import BikeCard from "./BikeCard";
-import "../../styles/garage.css";
+import "../../../styles/garage.css";
 
 const Garage = () => {
   return (

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "../../styles/header.css";
+import "../../../styles/header.css";
 
 const SettingsDropdown = () => {
     const navigate = useNavigate();

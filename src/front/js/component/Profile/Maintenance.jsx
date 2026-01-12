@@ -1,4 +1,4 @@
-import "../../styles/maintenance.css";
+import "../../../styles/maintenance.css";
 
 const Maintenance = () => {
     return (
