@@ -80,17 +80,9 @@
     padding-right: 16px;
   }
 }
-  
-   .stats {
-    display: flex;              
-    justify-content: center;    
-    gap: 12px;
-  }
 
   .stat-card {
-    flex: 0 0 30%;              
-    max-width: 110px;           
-    padding: 12px 8px;
+    padding: 16px;
   }
 
   .stat-card h3 {
