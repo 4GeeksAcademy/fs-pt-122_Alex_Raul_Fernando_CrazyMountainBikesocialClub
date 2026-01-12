@@ -38,7 +38,7 @@
 }
 
 .bike-card.active {
-    box-shadow: 0 0 0 2px var(--orange);
+    box-shadow: none;
 }
 
 .bike-card img {
