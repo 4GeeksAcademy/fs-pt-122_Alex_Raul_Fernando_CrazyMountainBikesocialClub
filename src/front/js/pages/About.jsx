@@ -42,16 +42,41 @@ export const About = () => {
         <div className="tr-about__main">
           <h2 className="tr-about__h2">Quiénes somos</h2>
           <p className="tr-about__p">
-            TRAIL es una plataforma web sencilla pero efectiva que conecta a ciclistas con los recursos
-            turísticos y culturales de la zona, facilitando la organización de rutas y promoviendo
-            el turismo local.
+            TRAIL es una plataforma web diseñada para ciclistas que buscan planificar, registrar y compartir sus rutas de forma sencilla y eficiente. Conectamos a la comunidad ciclista con el entorno, facilitando el descubrimiento de rutas, la organización de actividades y la interacción con los recursos locales, promoviendo una experiencia deportiva completa y sostenible.
           </p>
 
           <h3 className="tr-about__h3">Rutas y quedadas</h3>
           <ul className="tr-about__list">
-            <li>Calendario mensual visual</li>
-            <li>Formulario simple para crear quedadas</li>
-            <li>Listado de próximos eventos</li>
+            <li>Visualización del perfil topográfico de cada recorrido</li>
+            <li>Registro de entrenamientos y distancias recorridas en diferentes intervalos de tiempo</li>
+            <li>Calendario visual para la organización de quedadas</li>
+            <li>Biblioteca de rutas geolocalizadas sobre mapa</li>
+            <li>Creación y gestión de eventos grupales</li>
+            <li>Listado de próximas rutas y actividades</li>
+          </ul>
+
+          <h3 className="tr-about__h3">Perfil del ciclista</h3>
+          <ul className="tr-about__list">
+            <li>Configuración del estilo de ciclismo (gravel, mountain, etc.)</li>
+            <li>Gestión del equipamiento de la bicicleta</li>
+            <li>Registro de música asociada a entrenamientos y rutas</li>
+            <li>Seguimiento de récords personales y evolución deportiva</li>
+          </ul>
+
+          <h3 className="tr-about__h3">Mantenimiento y rendimiento</h3>
+          <ul className="tr-about__list">
+            <li>Sistema de tracking de mantenimiento de la bicicleta</li>
+            <li>Control del uso y desgaste de componentes</li>
+            <li>Historial de revisiones y recomendaciones de mantenimiento</li>
+            <li>Registro y comparación de marcas personales</li>
+          </ul>
+
+          <h3 className="tr-about__h3">Comunidad y retos</h3>
+          <ul className="tr-about__list">
+            <li>Seguimiento de otros ciclistas</li>
+            <li>Retos individuales y competitivos</li>
+            <li>Comparación de resultados y progresos</li>
+            <li>Organización de quedadas grupales</li>
           </ul>
 
           <h3 className="tr-about__h3">Sitios de interés</h3>
