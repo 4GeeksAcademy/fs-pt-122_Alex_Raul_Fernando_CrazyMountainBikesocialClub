@@ -1,0 +1,44 @@
+.route-detail {
+    min-height: 100vh;
+    background-color: var(--blue-dark);
+    color: white;
+    padding: 16px;
+}
+
+.route-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.route-detail-header button {
+    background: none;
+    color: var(--yellow-2);
+    font-size: 14px;
+}
+
+.route-detail-content {
+     margin-top: 24px;
+}
+
+.route-summary {
+    background-color: #162636;
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.route-map {
+  margin-top: 24px;
+}
+
+.route-map h2 {
+  margin-bottom: 12px;
+}
+
+.route-map-image {
+  width: 100%;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 1px solid var(--border-soft);
+}

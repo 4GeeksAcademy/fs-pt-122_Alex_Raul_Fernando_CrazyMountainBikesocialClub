@@ -9,4 +9,6 @@
     --radius-lg: 24px;
     --radius-md: 16px;
     --radius-sm: 12px;
+
+    --border-soft: rgba(255, 255, 255, 0.1);
 }
