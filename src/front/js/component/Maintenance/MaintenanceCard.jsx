@@ -45,4 +45,4 @@ const MaintenanceCard = () => ({
     );
 };
 
-export default Maintenance;
+export default MaintenanceCard;

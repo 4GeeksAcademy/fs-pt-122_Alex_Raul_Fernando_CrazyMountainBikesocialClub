@@ -15,11 +15,14 @@ const LoginForm = () => {
     setLoading(true);
 
     try {
-      const resp = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
-      });
+      const resp = await fetch(
+        import.meta.env.VITE_BACKEND_URL + "/api/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       const data = await resp.json();
 
@@ -31,7 +34,7 @@ const LoginForm = () => {
       // GUARDA SESIÓN
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
-      
+
       // → HOME
       navigate("/home");
     } catch (err) {
@@ -74,7 +77,7 @@ const LoginForm = () => {
       </div>
 
       {error && <div className="error-message">{error}</div>}
-      
+
       <span className="forgot-password">¿OLVIDASTE TU CONTRASEÑA?</span>
 
       <button type="submit" className="login-button" disabled={loading}>

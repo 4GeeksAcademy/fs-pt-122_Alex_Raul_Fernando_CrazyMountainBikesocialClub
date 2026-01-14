@@ -50,6 +50,43 @@ def login():
     return jsonify({"token": token, "user": user.serialize()}), 200
 
 
+@api.route("/home", methods=["GET"])
+@jwt_required()
+def home():
+    user_id = get_jwt_identity()
+    user = User.query.get(user_id)
+
+    if not user:
+        return jsonify({"msg": "user not found"}), 404
+    
+    home_data = {
+        "user": user.serialize(),
+        "weekly_kms": 42,
+        "featured_routes": [
+            { 
+                "id": 1,
+                "name": "Ruta del Bosque", 
+                "Kms": 12 
+            },
+            { 
+                "id": 2, 
+                "name": "Costa Norte", 
+                "Kms": 18 
+            },
+        ],
+        "friends_activity": [
+            { 
+                "user": "Alex", 
+                "kms": 10 
+            },
+            { 
+                "user": "Pablo", 
+                "kms": 25 
+            }
+        ]
+    }
+    return jsonify(home_data), 200
+
 @api.route("/private", methods=["GET"])
 @jwt_required()
 def private():
