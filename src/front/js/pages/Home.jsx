@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 
-export const Home = () => {
+import "../../styles/home.css";
+
+import WeeklyKms from "../component/Home/WeeklyKms";
+import StartRouteButton from "../component/Home/StartRouteButton";
+import FeaturedRoutes from "../component/Home/FeaturedRoutes";
+import FriendsActivity from "../component/Home/FriendsActivity";
+import MaintenanceCard from "../component/Maintenance/MaintenanceCard";
+
+const Home = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -9,17 +17,24 @@ export const Home = () => {
   useEffect(() => {
     // Verifica sesión
     const token = localStorage.getItem("token");
-    const storedUser = localStorage.getItem("user");
 
-    if (!token || !storedUser) {
-      localStorage.clear();
+    if (!token) {
       navigate("/login");
       return;
     }
 
-    setUser(JSON.parse(storedUser));
-    setLoading(false);
+    fetch(import.meta.env.VITE_BACKEND_URL + "/api/home", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      setUser(data.user);
+      setLoading(false);
+    });
   }, [navigate]);
+  
 
   const handleLogout = () => {
     localStorage.clear();
@@ -36,25 +51,25 @@ export const Home = () => {
   }
 
   return (
-    <div className="home-page">
+    <div className="home">
       <header className="home-header">
-        <h1>¡Bienvenido {user.email}!</h1>
+        <h1>Inicio</h1>
         <button onClick={handleLogout} className="logout-btn">
-          Cerrar Sesión
+          Cerrar sesión
         </button>
       </header>
 
       <main className="home-content">
-        <div className="dashboard">
-          <h2>Tu Perfil</h2>
-          <p>ID: <strong>{user.id}</strong></p>
-          <p>Email: <strong>{user.email}</strong></p>
-          
-          <div className="quick-actions">
-            <button className="btn-primary">Mi Perfil</button>
-            <button className="btn-secondary">Configuración</button>
-          </div>
-        </div>
+        <WeeklyKms />
+        <StartRouteButton />
+        <FeaturedRoutes />
+        <FriendsActivity />
+        <MaintenanceCard
+          title="Mantenimiento"
+          showTitle={true}
+          showActionButton={false}
+        />
+        <FriendsActivitySection />
       </main>
     </div>
   );
