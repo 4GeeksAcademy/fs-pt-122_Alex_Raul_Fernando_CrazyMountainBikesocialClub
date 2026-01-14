@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 
 import "../../styles/home.css";
 
@@ -17,17 +17,24 @@ const Home = () => {
   useEffect(() => {
     // Verifica sesión
     const token = localStorage.getItem("token");
-    const storedUser = localStorage.getItem("user");
 
-    if (!token || !storedUser) {
-      localStorage.clear();
+    if (!token) {
       navigate("/login");
       return;
     }
 
-    setUser(JSON.parse(storedUser));
-    setLoading(false);
+    fetch(import.meta.env.VITE_BACKEND_URL + "/api/home", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      setUser(data.user);
+      setLoading(false);
+    });
   }, [navigate]);
+  
 
   const handleLogout = () => {
     localStorage.clear();
