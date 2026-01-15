@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "../../styles/home.css";
 
@@ -11,30 +11,18 @@ import MaintenanceCard from "../component/Maintenance/MaintenanceCard";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Verifica sesión
     const token = localStorage.getItem("token");
-
     if (!token) {
       navigate("/login");
       return;
     }
 
-    fetch(import.meta.env.VITE_BACKEND_URL + "/api/home", {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      setUser(data.user);
-      setLoading(false);
-    });
+    
+    setLoading(false);
   }, [navigate]);
-  
 
   const handleLogout = () => {
     localStorage.clear();
@@ -64,14 +52,10 @@ const Home = () => {
         <StartRouteButton />
         <FeaturedRoutes />
         <FriendsActivity />
-        <MaintenanceCard
-          title="Mantenimiento"
-          showTitle={true}
-          showActionButton={false}
-        />
-        <FriendsActivitySection />
+        <MaintenanceCard title="Mantenimiento" showTitle={true} showActionButton={false} />
       </main>
     </div>
   );
 };
+
 export default Home;
